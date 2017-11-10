@@ -1,5 +1,5 @@
 import gi
-import moduloGrid
+
 gi.require_version('Gtk','3.0')
 from gi.repository import Gtk
 
@@ -28,18 +28,14 @@ class ventanaPrincipal(Gtk.Window):
         self.btn1.connect("clicked",self.resto)
         self.btn2.connect("clicked", self.resto)
         self.btn3.connect("clicked", self.resto)
-    def resto(self,btnoperacion):
 
-      if btnoperacion == self.btn1:
+    def validar(self,btnacpetar):
 
-       operacion =  float(self.entrada1.get_text())%float(self.entrada2.get_text())
-       self.etq.set_text(str(operacion))
-      if btnoperacion == self.btn2:
-       operacion = float(self.entrada1.get_text())**float(self.entrada2.get_text())
-       self.etq.set_text(str(operacion))
-      if btnoperacion == self.btn3:
-        operacion = float(self.entrada1.get_text())**float(0.5)
-        self.etq.set_text(str(operacion))
+      btnacpetar = self.btn1
+        
+
+
+
 
 # con esto hacemos la raiz cuadrada operacion = math.sqrt(float(self.entrada.getText()))
 
