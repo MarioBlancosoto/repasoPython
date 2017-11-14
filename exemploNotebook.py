@@ -21,9 +21,12 @@ class ventanaPrincipal(Gtk.Window):
         paxina2 = Gtk.Box()
         paxina2.set_border_width(10)
         paxina2.add(Gtk.Label("Páxina con imaxe e título"))
+        paxina2.set_visible(True)
         notebook.append_page(paxina2,Gtk.Image.new_from_icon_name("help-about",Gtk.IconSize.MENU))
         notebook.append_page(grid, Gtk.Label("Página Grid modificado"))
 
+        #notebook.set_current_page(2) con esto podemos poner en la página que queramos visualizar al comenzar,las páginas deben estar
+        #en modo setVisible para que podamos ponerle el set
         self.connect("delete-event",Gtk.main_quit)
         self.show_all()
 
