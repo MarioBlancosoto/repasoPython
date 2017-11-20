@@ -46,11 +46,33 @@ class VentanaPrincipal(Gtk.Window):
         listBox.add(fila)
         listBox2 = Gtk.ListBox()
 
-        elementos =['Esta ','é','unha ','lista','con','ordenación','incluida ']
+        elementos =['Esta ','é','unha ','lista','con','ordenación','incluida ','Fail']
 
         for i in elementos:
           listBox2.add(listBoxConDatos(i))
+        #Funcion de ordeacion pra os listbox,en minúsculas,se pasan a minúsculas con el dato.lower y posteriormente lo hace alfabeticamente
+        def funcion_ordeacion(fila1,fila2,dato,notify_destroy):
+            return fila1.dato.lower() >fila2.dato.lower()
+
+        #función que filtra os parámetros de fila,se o elemento e igual a fail que no no mostre,
+        def funcion_filtro(fila,dato,notify_destroy):
+            return False if  fila.dato =='Fail' else True
+        """    listBox2.add(listBoxConDatos(i))
+        #Funcion de ordeacion pra os listbox,en minúsculas,se pasan a minúsculas con el dato.lower y posteriormente lo hace alfabeticamente
+        def funcion_ordeacion(fila1,fila2,dato,notify_destroy):
+            return fila1.dato >fila2.dato
+
+        #función que filtra os parámetros de fila,se o elemento e igual a fail que no no mostre,
+        def funcion_filtro(fila,dato,notify_destroy):
+            return True if  fila.dato %2 ==0 else False"""
+        #poñemola funcion ordeacion a listbox2,pra ordealas etiquetas coa funcion_ordeacion
+        listBox2.set_sort_func(funcion_ordeacion, None,False)
+        #poñemola función de filtrado para poder filtrar o resultado da listbox coa funcion filtro
+        listBox2.set_filter_func(funcion_filtro,None,False)
+        #cada vez que cliqueamos en la lista nos imprime el nombre de cada una
+        listBox2.connect('row-activated',lambda control,fila : print(fila.dato))
         caixaExterior.pack_start(listBox2,True,True,0)
+
           #Funcións por definir
         self.show_all()
 class listBoxConDatos(Gtk.ListBoxRow):

@@ -86,3 +86,5 @@ print(meu_xerador(5,15,2))
 for i in meu_xerador(5,15,2):
     print(i)
 
+pares2 = list(filter(lambda n : n%2.0 == 0, l))
+print ("Esta es pares2 ",pares2)
