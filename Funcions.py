@@ -62,5 +62,7 @@ print(a,b)
 
 
 
-"""Excepcións """
+"""Funcions lambda"""
+
+
 
