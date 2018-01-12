@@ -2,6 +2,7 @@
   <component name="FileTypeManager" version="17">
     <extensionMap>
       <mapping pattern="ficheiro2" type="Images" />
+      <mapping pattern="lanzador" type="PLAIN_TEXT" />
       <mapping pattern="ficheiro3" type="PLAIN_TEXT" />
       <mapping pattern="ficheiro1" type="PLAIN_TEXT" />
     </extensionMap>
