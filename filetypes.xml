@@ -5,6 +5,7 @@
       <mapping pattern="lanzador" type="PLAIN_TEXT" />
       <mapping pattern="ficheiro3" type="PLAIN_TEXT" />
       <mapping pattern="ficheiro1" type="PLAIN_TEXT" />
+      <mapping ext="glade" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
 </application>
